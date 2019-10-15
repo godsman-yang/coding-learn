@@ -25,19 +25,22 @@ def get_fibonacci3(num):
 
 if __name__ == "__main__":
   num = int(input("Enter number for fibonacci> "))
+  print()
 
   start_time = time.time()
   fibonacci_number = get_fibonacci1(num)
   end_time = time.time()
-  print("elaspsed time1:", end_time - start_time)
+  print("elaspsed time1(recursive):", end_time - start_time)
   print("fibonacci number:", fibonacci_number)
+  print()
 
   start_time = time.time()
   fibonacci_number = get_fibonacci2(num)
   end_time = time.time()
-  print("elaspsed time2:", end_time - start_time)
+  print("elaspsed time2(memoization):", end_time - start_time)
   print("fibonacci number:", fibonacci_number)
   # print(memo)
+  print()
 
   start_time = time.time()
   fibonacci_number = get_fibonacci3(num)
