@@ -1,6 +1,18 @@
 # ref: https://devdoggo.netlify.com/post/alg_ds/challenges/fibonacci_solutions/
 import time
 
+def get_fibonacci_calc(num):
+  if num < 2:
+    return num
+
+  n1 = 1
+  n2 = 1
+  fibo = 0
+  for i in range(3, num+1):
+    fibo = n1 + n2
+    n1, n2 = n2, fibo
+  return fibo
+
 def get_fibonacci1(num):
   if num < 2:
     return num
@@ -25,6 +37,13 @@ def get_fibonacci3(num):
 
 if __name__ == "__main__":
   num = int(input("Enter number for fibonacci> "))
+  print()
+
+  start_time = time.time()
+  fibonacci_number = get_fibonacci_calc(num)
+  end_time = time.time()
+  print("elaspsed time(calc):", end_time - start_time)
+  print("fibonacci number:", fibonacci_number)
   print()
 
   start_time = time.time()
